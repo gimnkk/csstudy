@@ -6,7 +6,7 @@ function clock() {
     var month = date.getMonth();
     var clockDate = date.getDate();
     var day = date.getDay();
-    var weekStr = now.getWeek();
+    var weekStr = date.getWeek();
     var week = ['일', '월', '화', '수', '목', '금', '토'];
     var hours = date.getHours();
     var minutes = date.getMinutes();
