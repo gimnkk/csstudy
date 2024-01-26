@@ -15,6 +15,13 @@ function clock() {
         `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
 }
 
+ Date.prototype.getWeek = function () {
+     var onejan = new Date(this.getFullYear(), 0, 1);
+     var today = new Date(this.getFullYear(), this.getMonth(), this.getDate());
+     var dayOfYear = ((today - onejan + 86400000) / 86400000);
+     return Math.ceil(dayOfYear / 7)
+ };
+
 function init() {
     clock();
     setInterval(clock, 1000);
@@ -40,6 +47,8 @@ init();
 //     week.innerText = weekStr;
 // }
 
+
+
 // function timer() {
 //     const date = new Date();
 
@@ -50,12 +59,7 @@ init();
 //     clock.innerText = `${Hours}:${Mins}:${seconds}`;
 // }
 
-// Date.prototype.getWeek = function () {
-//     var onejan = new Date(this.getFullYear(), 0, 1);
-//     var today = new Date(this.getFullYear(), this.getMonth(), this.getDate());
-//     var dayOfYear = ((today - onejan + 86400000) / 86400000);
-//     return Math.ceil(dayOfYear / 7)
-// };
+
 // calender();
 // timer();
 // setInterval(timer, 1000);
