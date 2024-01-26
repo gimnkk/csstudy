@@ -11,7 +11,7 @@ function clock() {
     var hours = date.getHours();
     var minutes = date.getMinutes();
     var seconds = date.getSeconds();
-    clockTarget.innerText = `${year}년 ${month + 1}월 ${clockDate}일 ${week[day]}요일 ${weekStr}주차` +
+    clockTarget.innerText = `${year}년 ${month + 1}월 ${clockDate}일 ${week[day]}요일 ${weekStr}주차 ` +
         `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
 }
 
