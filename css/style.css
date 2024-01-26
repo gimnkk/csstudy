@@ -12,21 +12,26 @@ html {
 }
 
 .child {
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
 }
 
 .combo {
-    font-size: 2em;
+    font-size: 1.5em;
+    padding: 1%;
+}
+
+.comboOpt {
+    font-size: 0.5em;
     padding: 1%;
 }
 
 .textarea {
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 1%;
 }
 
 .submit {
-    font-size: 2em;
+    font-size: 1.5em;
     padding: 1%;
 }
