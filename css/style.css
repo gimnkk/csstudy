@@ -1,23 +1,32 @@
+html {
+    font-size: 1em;
+}
+
 .container {
-    font-size: 100%;
+    /* font-size: 2em; */
     font-family: arial;
     height: auto;
     /* 자식 요소(.child)를 중앙 정렬하기 */
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 .child {
-    font-size: 100%;
+    font-size: 2em;
     text-align: center;
 }
 
 .combo {
-    font-size: 20px;
+    font-size: 2em;
     padding: 1%;
 }
 
 .textarea {
-    font-size: 20px;
+    font-size: 2em;
+    padding: 1%;
+}
+
+.submit {
+    font-size: 2em;
     padding: 1%;
 }
