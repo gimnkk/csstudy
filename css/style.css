@@ -35,3 +35,8 @@ html {
     font-size: 1.5em;
     padding: 1%;
 }
+
+.checkbox {
+    width: 1.5em;
+    height: 1.5em;
+}
