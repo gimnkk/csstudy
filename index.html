@@ -27,19 +27,18 @@
 <div class="main-content">
   <div class="container">
     <!-- 목표 확인 -->
-    <div class="content active" id="goalMenu">
+    <div class="content" id="goalMenu">
       <h1>목표 확인</h1>
-      <p>목표 확인 내용입니다.</p>
+      <div class="form-group">
+        <button class="btn" onclick="location.href='./html/result.html'">목표 확인</button>
+      </div>
     </div>
     <!-- 목표 입력 -->
-    <div class="content" id="inputMenu">
+    <div class="content active" id="inputMenu">
       <h2 id="koreaTime"></h2>
       <h1>목표 설정</h1>
       <div class="container">
         <form onsubmit="submitForm(event)">
-          <div class="form-group">
-            <button class="btn" onclick="location.href='./html/result.html'">목표 확인</button>
-          </div>
           <div class="form-group">
             <label for="name" style="font-family: -apple-system, 'Nanum Gothic', sans-serif;"></label>
             <select id="name" style="font-size: 16px;" required>
