@@ -3,7 +3,7 @@ body {
         margin: 0;
         padding: 20px;
     }
-    h1, h3 {
+    h1, h2, h3 {
         text-align: center;
     }
     .container {
@@ -42,3 +42,87 @@ body {
             width: calc(100% - 40px); /* 좌우 여백을 고려하여 너비 설정 */
         }
     }
+    /* 기본 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 상단 메뉴 스타일 */
+        .top-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            z-index: 1000; /* 다른 콘텐츠 위에 표시하기 위한 z-index */
+        }
+        .top-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .top-menu li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .top-menu li:last-child {
+            margin-right: 0;
+        }
+        .top-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        /* 메뉴 hover 스타일 */
+    .top-menu li:hover a {
+        color: #ffcc00; /* 마우스를 올렸을 때 글자 색상 변경 */
+        transition: color 0.3s; /* 부드러운 전환 효과 */
+    }
+        /* 메인 콘텐츠 스타일 */
+        .main-content {
+            margin-top: 60px; /* 상단 메뉴 높이에 맞춰 조절 */
+        }
+        /* 각 내용 스타일 */
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        /* 메뉴 간의 구분을 위한 스타일 */
+        .top-menu li {
+            position: relative; /* 자식 요소인 구분선을 위치시키기 위해 */
+        }
+        .top-menu li:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 20px;
+            background-color: rgba(255, 255, 255, 0.5); /* 흰색 구분선 */
+        }
+        .top-menu li:last-child::after {
+            display: none; /* 마지막 메뉴의 구분선은 숨김 */
+        }
+        /* 메뉴 배경 색상 조금 차별화 */
+        .top-menu a {
+            background-color: rgba(0, 0, 0, 0.1); /* 메뉴 배경 색상 조절 */
+            padding: 10px 20px; /* 메뉴 영역 확장 */
+            border-radius: 5px; /* 모서리를 부드럽게 만듦 */
+            transition: background-color 0.3s; /* 배경색 전환에 부드러운 효과 적용 */
+        }
+        .top-menu a:hover {
+            background-color: rgba(0, 0, 0, 0.3); /* 메뉴에 마우스를 올렸을 때 배경색 변경 */
+        }
