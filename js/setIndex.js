@@ -21,7 +21,7 @@ function setCombo(members) {
     if (member[3] === 'TRUE') {
       let option = '';
       option = '<option value="' + member[0] + '" class="comboOpt">' + member[2] + '</option>';
-      $('#members').append(option);
+      $('#name').append(option);
     }
   });
 }
@@ -33,10 +33,24 @@ getMembers();
  */
 $("#rest").change(function () {
   if ($(this).is(':checked')) {
-    $("#targetText").attr("required", false);
-    $("#targetText").attr("disabled", true);
+    $("#goal").attr("required", false);
+    $("#goal").attr("disabled", true);
   } else {
-    $("#targetText").attr("required", true);
-    $("#targetText").attr("disabled", false);
+    $("#goal").attr("required", true);
+    $("#goal").attr("disabled", false);
   }
 });
+
+function submitForm(event) {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var goal = document.getElementById("goal").value;
+    var rest = document.getElementById("rest").checked;
+
+    console.log("이름:", name);
+    console.log("목표:", goal);
+    console.log("휴식:", rest);
+
+    // 여기에 서버로 데이터를 전송하거나 다른 작업을 수행하는 코드를 추가하세요.
+}

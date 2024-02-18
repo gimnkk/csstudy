@@ -1,42 +1,44 @@
-html {
-    font-size: 1em;
-}
+body {
+        font-family: -apple-system, 'Nanum Gothic', sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+    h1, h3 {
+        text-align: center;
+    }
+    .container {
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 20px;
+        font-family: -apple-system, 'Nanum Gothic', sans-serif;
+        font-size: 16px;
+    }
+    .btn {
+        display: inline-block;
+        background-color: #5F4B8B;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+        font-family: -apple-system, 'Nanum Gothic', sans-serif;
+    }
+    .btn:hover {
+        background-color: #4e3a6f;
+    }
 
-.container {
-    /* font-size: 2em; */
-    font-family: arial;
-    height: auto;
-    /* 자식 요소(.child)를 중앙 정렬하기 */
-    display: flex;
-    justify-content: center;
-}
-
-.child {
-    font-size: 1.5em;
-    text-align: center;
-}
-
-.combo {
-    font-size: 1.5em;
-    padding: 1%;
-}
-
-.comboOpt {
-    font-size: 0.5em;
-    padding: 1%;
-}
-
-.textarea {
-    font-size: 1.5em;
-    padding: 1%;
-}
-
-.button {
-    font-size: 1.5em;
-    padding: 1%;
-}
-
-.checkbox {
-    width: 1.5em;
-    height: 1.5em;
-}
+    /* 모바일 화면에 대한 스타일 */
+    @media only screen and (max-width: 600px) {
+        .container {
+            padding: 0 10px; /* 좌우 여백을 줄임 */
+        }
+        textarea {
+            width: calc(100% - 40px); /* 좌우 여백을 고려하여 너비 설정 */
+        }
+    }
