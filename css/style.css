@@ -126,3 +126,13 @@ body {
         .top-menu a:hover {
             background-color: rgba(0, 0, 0, 0.3); /* 메뉴에 마우스를 올렸을 때 배경색 변경 */
         }
+/* 모바일 화면에서 메뉴 스타일 조정 */
+@media only screen and (max-width: 600px) {
+    .top-menu li {
+        margin-right: 10px; /* 메뉴 간 간격 줄임 */
+    }
+    .top-menu a {
+        font-size: 14px; /* 메뉴 글꼴 크기 조절 */
+        padding: 8px 15px; /* 메뉴 영역 확장 */
+    }
+}
