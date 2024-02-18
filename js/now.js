@@ -1,15 +1,15 @@
 function updateTimes() {
       // 미국 동부 시간 (뉴욕)
       var eastUsTime = new Date();
-      document.getElementById("eastUsTime").innerHTML = "<strong>미국 동부 시간:</strong> " + formatDateTime(eastUsTime, "America/New_York");
+      document.getElementById("eastUsTime").innerHTML = "<strong>미국 동부:</strong> " + formatDateTime(eastUsTime, "America/New_York");
 
       // 미국 서부 시간
       var westUsDate = new Date();
-      document.getElementById("westUsTime").innerHTML = "<strong>미국 서부 시간:</strong> " + formatDateTime(westUsDate, "America/Los_Angeles");
+      document.getElementById("westUsTime").innerHTML = "<strong>미국 서부:</strong> " + formatDateTime(westUsDate, "America/Los_Angeles");
 
       // 한국 시간
       var koreaDate = new Date();
-      document.getElementById("koreaTime").innerHTML = "<strong>대한민국 시간:</strong> " + formatDateTime(koreaDate, "Asia/Seoul");
+      document.getElementById("koreaTime").innerHTML = "<strong>대한민국:</strong> " + formatDateTime(koreaDate, "Asia/Seoul");
   }
 
   function formatDateTime(date, timeZone) {
