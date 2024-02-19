@@ -56,7 +56,7 @@ function submitForm(event) {
     var currentDate = new Date(); //로컬 컴퓨터의 시간대
     var currentDay = currentDate.getDay();
 
-    // 한국 시간 기준으로 월요일이 아닌 경우에는 제출을 막습니다. (월요일은 1)
+    // 한국 시간 기준으로 일요일, 월요일이 아닌 경우에는 제출을 막습니다. (일요일은 0, 월요일은 1)
     if (currentDay !== 0 && currentDay !== 1) {
       alert("일요일, 월요일에만 목표를 제출할 수 있습니다.");
       event.preventDefault(); // 폼 제출을 막습니다.

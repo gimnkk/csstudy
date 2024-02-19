@@ -1,5 +1,5 @@
 function loadMenu() {
-    fetch('/html/menu.html')
+    fetch('./html/menu.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('menuContainer').innerHTML = data;
@@ -34,7 +34,7 @@ function addMenuEventListeners() {
 function loadContents() {
   const contentIds = ['goalMenu', 'fineMenu'];
   contentIds.forEach(contentId => {
-    fetch(`/html/${contentId}.html`)
+    fetch(`./html/${contentId}.html`)
       .then(response => response.text())
       .then(data => {
         document.getElementById(contentId).innerHTML = data;
