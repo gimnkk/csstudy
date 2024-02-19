@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>목표 설정</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목표 설정</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -13,87 +13,51 @@
 <script src="./js/sheetsInfo.js" type="text/javascript"></script>
 <script src="./js/getInfo.js" type="text/javascript"></script>
 <!-- 상단 메뉴 -->
-<div class="top-menu">
-  <div class="container">
-    <ul>
-      <li><a href="#" class="menu-link" data-target="goalMenu">목표 확인</a></li>
-      <li><a href="#" class="menu-link" data-target="inputMenu">목표 입력</a></li>
-      <li><a href="#" class="menu-link" data-target="fineMenu">벌금 확인</a></li>
-    </ul>
-  </div>
-</div>
+<div id="menuContainer"></div>
 
 <!-- 메인 콘텐츠 -->
 <div class="main-content">
-  <div class="container">
-    <!-- 목표 확인 -->
-    <div class="content" id="goalMenu">
-      <h1>목표 확인</h1>
-      <div class="form-group">
-        <button class="btn" onclick="location.href='./html/result.html'">목표 확인</button>
-      </div>
+    <div class="container">
+        <!-- 목표 확인 -->
+        <div class="content" id="goalMenu">
+        </div>
+        <!-- 목표 입력 -->
+        <div class="content active" id="inputMenu">
+            <h1>목표 설정</h1>
+            <div class="container">
+                <form onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name" style="font-family: -apple-system, 'Nanum Gothic', sans-serif;"></label>
+                        <select id="name" style="font-size: 16px;" required>
+                            <option value="" selected disabled hidden>이름 선택</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal" style="font-family: -apple-system, 'Nanum Gothic', sans-serif;"></label>
+                        <textarea id="goal" placeholder="목표 입력" rows="7" cols="30"
+                                  style="font-family: -apple-system, 'Nanum Gothic', sans-serif; font-size: 16px;"
+                                  required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="rest" style="font-family: -apple-system, 'Nanum Gothic', sans-serif;">휴식:</label>
+                        <input type="checkbox" id="rest" name="rest" style="width: 16px; height: 16px;">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn" type="submit">목표 제출</button>
+                    </div>
+                </form>
+            </div>
+            <h2 id="koreaTime"></h2>
+            <h3 id="eastUsTime"></h3>
+            <h3 id="westUsTime"></h3>
+        </div>
+        <!-- 벌금 확인 -->
+        <div class="content" id="fineMenu">
+        </div>
     </div>
-    <!-- 목표 입력 -->
-    <div class="content active" id="inputMenu">
-      <h2 id="koreaTime"></h2>
-      <h1>목표 설정</h1>
-      <div class="container">
-        <form onsubmit="submitForm(event)">
-          <div class="form-group">
-            <label for="name" style="font-family: -apple-system, 'Nanum Gothic', sans-serif;"></label>
-            <select id="name" style="font-size: 16px;" required>
-              <option value="" selected disabled hidden>이름 선택</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="goal" style="font-family: -apple-system, 'Nanum Gothic', sans-serif;"></label>
-            <textarea id="goal" placeholder="목표 입력" rows="7" cols="30" style="font-family: -apple-system, 'Nanum Gothic', sans-serif; font-size: 16px;" required></textarea>
-          </div>
-          <div class="form-group">
-            <label for="rest" style="font-family: -apple-system, 'Nanum Gothic', sans-serif;">휴식:</label>
-            <input type="checkbox" id="rest" name="rest" style="width: 16px; height: 16px;">
-          </div>
-          <div class="form-group">
-            <button class="btn" type="submit">목표 제출</button>
-          </div>
-        </form>
-      </div>
-
-      <h3 id="eastUsTime"></h3>
-      <h3 id="westUsTime"></h3>
-
-    </div>
-    <!-- 벌금 확인 -->
-    <div class="content" id="fineMenu">
-      <h1>벌금 확인</h1>
-      <p>벌금 확인 내용입니다.</p>
-    </div>
-  </div>
 </div>
 <script src="./js/now.js"></script>
 <script src="./js/setIndex.js"></script>
-<script>
-  // JavaScript로 메뉴 전환 구현
-  document.addEventListener("DOMContentLoaded", function() {
-      const menuLinks = document.querySelectorAll('.menu-link');
-      const contents = document.querySelectorAll('.content');
-
-      menuLinks.forEach(function(menuLink) {
-          menuLink.addEventListener('click', function(e) {
-              e.preventDefault();
-              const target = this.getAttribute('data-target');
-
-              // 모든 콘텐츠를 숨김
-              contents.forEach(function(content) {
-                  content.classList.remove('active');
-              });
-
-              // 클릭한 메뉴에 해당하는 콘텐츠만 보이도록 변경
-              document.getElementById(target).classList.add('active');
-          });
-      });
-  });
-</script>
-
+<script src="./js/menu.js"></script>
 </body>
 </html>
